@@ -1,0 +1,52 @@
+{
+  "name": "vue-gravatar",
+  "version": "1.0.0",
+  "description": "Gravatar component for VueJS",
+  "main": "lib/index.js",
+  "author": "Jiri Chara <jiri@chara.vip>",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run clean && npm run test && npm run build:commonjs",
+    "build:commonjs": "cross-env NODE_ENV=production webpack --config config/webpack.commonjs.conf.js --progress --hide-modules",
+    "clean": "rimraf lib",
+    "doc": "mkdirp esdoc && esdoc -c esdoc.json",
+    "lint": "eslint src test examples",
+    "test:unit": "karma start karma.conf.js",
+    "test": "npm run lint && npm run test:unit",
+    "prepublish": "npm build"
+  },
+  "files": [
+    "src",
+    "lib"
+  ],
+  "dependencies": {
+    "md5": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-vue-app": "^0.5.1",
+    "babel-register": "^6.24.0",
+    "browser-env": "^2.0.25",
+    "cross-env": "^3.2.4",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb-base": "^11.1.2",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-vue": "^2.0.1",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.5.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-webpack": "^2.0.3",
+    "phantomjs-prebuilt": "^2.1.14",
+    "rimraf": "^2.6.1",
+    "vue": "^2.2.6",
+    "vue-loader": "^11.3.3",
+    "vue-node": "^1.0.2",
+    "vue-template-compiler": "^2.2.6",
+    "webpack": "^2.3.2",
+    "webpack-merge": "^4.1.0"
+  }
+}
