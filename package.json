@@ -35,6 +35,7 @@
     "eslint-config-airbnb-base": "^11.1.2",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-vue": "^2.0.1",
+    "express": "^4.15.2",
     "jasmine-core": "^2.5.2",
     "karma": "^1.5.0",
     "karma-jasmine": "^1.1.0",
@@ -47,6 +48,7 @@
     "vue-node": "^1.0.2",
     "vue-template-compiler": "^2.2.6",
     "webpack": "^2.3.2",
+    "webpack-hot-middleware": "^2.17.1",
     "webpack-merge": "^4.1.0"
   }
 }
