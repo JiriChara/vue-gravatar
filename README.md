@@ -1,6 +1,9 @@
 # vue-gravatar
 
+[![Build Status](https://travis-ci.org/JiriChara/vue-gravatar.svg?branch=master)](https://travis-ci.org/JiriChara/vue-gravatar)
+
 A dead-simple gravatar component for VueJS applications.
+
 
 ## Installation
 
