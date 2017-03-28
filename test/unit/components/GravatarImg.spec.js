@@ -29,6 +29,11 @@ describe('Gravatar Image Component', () => {
       expect(GravatarImg.props.defaultImg.default).toBe('retro');
     });
 
+    it('has rating property', () => {
+      expect(GravatarImg.props.rating.type).toBe(String);
+      expect(GravatarImg.props.rating.default).toBe('g');
+    });
+
     it('has alt property', () => {
       expect(GravatarImg.props.alt.type).toBe(String);
       expect(GravatarImg.props.alt.default).toBe('Avatar');
@@ -49,7 +54,7 @@ describe('Gravatar Image Component', () => {
 
       it('has correct url by default', () => {
         expect(gravatar.url).toEqual(
-          `https://www.gravatar.com/avatar/${hash}?s=80&d=retro`
+          `//www.gravatar.com/avatar/${hash}?s=80&d=retro&r=g`
         );
       });
 
@@ -62,7 +67,7 @@ describe('Gravatar Image Component', () => {
         });
 
         expect(anotherGravatar.url).toEqual(
-          `https://www.gravatar.com/avatar/${hash}?s=100&d=retro`
+          `//www.gravatar.com/avatar/${hash}?s=100&d=retro&r=g`
         );
       });
 
@@ -75,7 +80,20 @@ describe('Gravatar Image Component', () => {
         });
 
         expect(anotherGravatar.url).toEqual(
-          `https://www.gravatar.com/avatar/${hash}?s=80&d=mm`
+          `//www.gravatar.com/avatar/${hash}?s=80&d=mm&r=g`
+        );
+      });
+
+      it('passes rating', () => {
+        const rating = 'pg';
+
+        const anotherGravatar = getViewModel(GravatarImg, {
+          email,
+          rating
+        });
+
+        expect(anotherGravatar.url).toEqual(
+          `//www.gravatar.com/avatar/${hash}?s=80&d=retro&r=pg`
         );
       });
     });
@@ -94,7 +112,7 @@ describe('Gravatar Image Component', () => {
 
     it('sets src to url', () => {
       expect(gravatar.$el.src).toEqual(
-          `https://www.gravatar.com/avatar/${hash}?s=80&d=retro`
+        `http://www.gravatar.com/avatar/${hash}?s=80&d=retro&r=g`
       );
     });
 

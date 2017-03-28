@@ -24,6 +24,11 @@
         default: 'retro'
       },
 
+      rating: {
+        type: String,
+        default: 'g'
+      },
+
       alt: {
         type: String,
         default: 'Avatar'
@@ -33,10 +38,11 @@
     computed: {
       url() {
         const img = [
-          'https://www.gravatar.com/avatar/',
+          '//www.gravatar.com/avatar/',
           md5(this.email.trim()),
           `?s=${this.size}`,
-          `&d=${this.defaultImg}`
+          `&d=${this.defaultImg}`,
+          `&r=${this.rating}`
         ];
 
         return img.join('');
