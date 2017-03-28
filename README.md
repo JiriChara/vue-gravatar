@@ -32,6 +32,7 @@ The following props are available:
 * **email** (type: String, required) email address of the avatar
 * **size** (type: Number, default: 80) size of the avatar
 * **default-img** (type: String, default: 'retro') default image type (see. http://en.gravatar.com/site/implement/images/)
+* **rating** (type: String, default: 'g') rating of the image (see. http://en.gravatar.com/site/implement/images/)
 * **alt** (type: String, default: 'Avatar') The alternative text of the image
 
 #### Example
