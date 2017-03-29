@@ -4,6 +4,8 @@
 
 A dead-simple gravatar component for VueJS applications.
 
+**[DEMO](https://jirichara.github.io/vue-gravatar/)**
+
 
 ## Installation
 
