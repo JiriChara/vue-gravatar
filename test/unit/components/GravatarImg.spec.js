@@ -18,8 +18,8 @@ describe('Gravatar Image Component', () => {
       expect(GravatarImg.props.email.type).toBe(String);
     });
 
-    it('has md5 property', () => {
-      expect(GravatarImg.props.md5.type).toBe(String);
+    it('has hash property', () => {
+      expect(GravatarImg.props.hash.type).toBe(String);
     });
 
     it('has size property', () => {
@@ -65,7 +65,7 @@ describe('Gravatar Image Component', () => {
         const md5Hash = '123';
 
         const anotherGravatar = getViewModel(GravatarImg, {
-          md5: md5Hash
+          hash: md5Hash
         });
 
         expect(anotherGravatar.url).toEqual(

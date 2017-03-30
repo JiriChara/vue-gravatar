@@ -13,7 +13,7 @@
         type: String
       },
 
-      md5: {
+      hash: {
         type: String,
         default: ''
       },
@@ -41,12 +41,9 @@
 
     computed: {
       url() {
-        const md5Hash = this.md5;
-        const email = this.email;
-
         const img = [
           '//www.gravatar.com/avatar/',
-          md5Hash || md5(email.trim()),
+          this.hash || md5(this.email.trim()),
           `?s=${this.size}`,
           `&d=${this.defaultImg}`,
           `&r=${this.rating}`

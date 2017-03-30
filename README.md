@@ -34,7 +34,7 @@ You may now use the component in your markup
 
 The following props are available:
 
-* **md5** (type: String) md5 hash of the gravatar
+* **hash** (type: String) md5 hash of the gravatar
 * **email** (type: String) email address of the gravatar (used when md5 hash not given)
 * **size** (type: Number, default: 80) size of the avatar
 * **default-img** (type: String, default: 'retro') default image type (see. http://en.gravatar.com/site/implement/images/)
@@ -44,7 +44,7 @@ The following props are available:
 #### Example
 
 ```vue
-<v-gravatar md5="f3ada405ce890b6f8204094deb12d8a8" alt="Nobody" :size="200" default-img="mm" />
+<v-gravatar hash="f3ada405ce890b6f8204094deb12d8a8" alt="Nobody" :size="200" default-img="mm" />
 ```
 
 ## License
