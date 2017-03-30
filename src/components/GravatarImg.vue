@@ -10,8 +10,12 @@
 
     props: {
       email: {
+        type: String
+      },
+
+      md5: {
         type: String,
-        required: true
+        default: ''
       },
 
       size: {
@@ -37,9 +41,12 @@
 
     computed: {
       url() {
+        const md5Hash = this.md5;
+        const email = this.email;
+
         const img = [
           '//www.gravatar.com/avatar/',
-          md5(this.email.trim()),
+          md5Hash || md5(email.trim()),
           `?s=${this.size}`,
           `&d=${this.defaultImg}`,
           `&r=${this.rating}`

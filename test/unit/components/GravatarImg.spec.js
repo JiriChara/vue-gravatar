@@ -16,7 +16,10 @@ describe('Gravatar Image Component', () => {
   describe('props', () => {
     it('has email property', () => {
       expect(GravatarImg.props.email.type).toBe(String);
-      expect(GravatarImg.props.email.required).toBe(true);
+    });
+
+    it('has md5 property', () => {
+      expect(GravatarImg.props.md5.type).toBe(String);
     });
 
     it('has size property', () => {
@@ -55,6 +58,18 @@ describe('Gravatar Image Component', () => {
       it('has correct url by default', () => {
         expect(gravatar.url).toEqual(
           `//www.gravatar.com/avatar/${hash}?s=80&d=retro&r=g`
+        );
+      });
+
+      it('uses given md5 hash', () => {
+        const md5Hash = '123';
+
+        const anotherGravatar = getViewModel(GravatarImg, {
+          md5: md5Hash
+        });
+
+        expect(anotherGravatar.url).toEqual(
+          `//www.gravatar.com/avatar/${md5Hash}?s=80&d=retro&r=g`
         );
       });
 
