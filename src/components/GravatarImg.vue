@@ -43,7 +43,7 @@
       url() {
         const img = [
           '//www.gravatar.com/avatar/',
-          this.hash || md5(this.email.trim()),
+          this.hash || md5(this.email.trim().toLowerCase()),
           `?s=${this.size}`,
           `&d=${this.defaultImg}`,
           `&r=${this.rating}`

@@ -61,6 +61,16 @@ describe('Gravatar Image Component', () => {
         );
       });
 
+      it('converts email to lower case', () => {
+        const anotherGravatar = getViewModel(GravatarImg, {
+          email: 'Foo@BAR.com'
+        });
+
+        expect(anotherGravatar.url).toEqual(
+          `//www.gravatar.com/avatar/${hash}?s=80&d=retro&r=g`
+        );
+      });
+
       it('uses given md5 hash', () => {
         const md5Hash = '123';
 

@@ -1,6 +1,6 @@
 {
   "name": "vue-gravatar",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Gravatar component for VueJS",
   "main": "lib/index.js",
   "author": "Jiri Chara <jiri@chara.vip>",
