@@ -1,6 +1,8 @@
 # vue-gravatar
 
 [![Build Status](https://travis-ci.org/JiriChara/vue-gravatar.svg?branch=master)](https://travis-ci.org/JiriChara/vue-gravatar)
+[![NPM Version](https://img.shields.io/npm/v/vue-gravatar.svg)](https://www.npmjs.com/package/vue-gravatar)
+[![NPM Dowloads](https://img.shields.io/npm/dm/vue-gravatar.svg)](https://www.npmjs.com/package/vue-gravatar)
 
 A dead-simple gravatar component for VueJS applications.
 
