@@ -1,5 +1,5 @@
 <template>
-  <img :src="url" :alt="alt" @load="onLoad" @error="onError" />
+  <img :class="class" :src="url" :alt="alt" @load="onLoad" @error="onError" />
 </template>
 
 <script>
@@ -9,6 +9,11 @@
     name: 'gravatar-img',
 
     props: {
+      class: {
+        type: String,
+        default: 'gravatar'
+      },
+      
       email: {
         type: String
       },
