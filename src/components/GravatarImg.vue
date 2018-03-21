@@ -10,7 +10,8 @@
 
     props: {
       email: {
-        type: String
+        type: String,
+        default: ''
       },
 
       hash: {
