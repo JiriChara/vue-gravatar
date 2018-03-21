@@ -1,5 +1,5 @@
 <template>
-  <img :src="url" :alt="alt" />
+  <img :src="url" :alt="alt" @error="onError" />
 </template>
 
 <script>
@@ -50,6 +50,12 @@
         ];
 
         return img.join('');
+      }
+    },
+
+    methods: {
+      onError(...args) {
+        this.$emit('error', ...args);
       }
     }
   };
