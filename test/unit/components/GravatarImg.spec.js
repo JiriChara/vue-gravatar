@@ -3,9 +3,10 @@ import md5 from 'md5';
 
 import GravatarImg from '../../../src/components/GravatarImg.vue';
 
-const getViewModel = (Component, propsData) => {
+const getViewModel = (Component, propsData, mount = true) => {
   const Ctor = Vue.extend(Component);
-  return new Ctor({ propsData }).$mount();
+  const component = new Ctor({ propsData });
+  return mount ? component.$mount() : component;
 };
 
 describe('Gravatar Image Component', () => {
@@ -159,6 +160,41 @@ describe('Gravatar Image Component', () => {
       expect(gravatar.$el.tagName).toEqual(
         'IMG'
       );
+    });
+  });
+
+  describe('error handling', () => {
+    let gravatar;
+    let gravatar404;
+
+    beforeEach(() => {
+      const email = 'this-is-definitely-non@existent-email-address.foo';
+      const defaultImg = '404';
+
+      gravatar = getViewModel(GravatarImg, {
+        email
+      }, false);
+
+      gravatar404 = getViewModel(GravatarImg, {
+        email,
+        defaultImg
+      }, false);
+    });
+
+    it('should broadcast load event', (done) => {
+      gravatar.$mount();
+
+      gravatar.$on('load', () => {
+        done();
+      });
+    });
+
+    it('should broadcast error event', (done) => {
+      gravatar404.$mount();
+
+      gravatar404.$on('error', () => {
+        done();
+      });
     });
   });
 });
