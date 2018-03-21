@@ -1,5 +1,5 @@
 <template>
-  <img :src="url" :alt="alt" @error="onError" />
+  <img :src="url" :alt="alt" @load="onLoad" @error="onError" />
 </template>
 
 <script>
@@ -54,6 +54,10 @@
     },
 
     methods: {
+      onLoad(...args) {
+        this.$emit('load', ...args);
+      },
+
       onError(...args) {
         this.$emit('error', ...args);
       }
