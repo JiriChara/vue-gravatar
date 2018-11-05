@@ -1,5 +1,12 @@
 <template>
-  <img :src="url" :alt="alt" @load="onLoad" @error="onError" />
+  <img
+    v-bind="attrs"
+    v-on="listeners"
+    :src="url"
+    :alt="alt"
+    @load="onLoad"
+    @error="onError"
+  />
 </template>
 
 <script>
@@ -7,6 +14,8 @@
 
   export default {
     name: 'gravatar-img',
+
+    inheritAttrs: false,
 
     props: {
       email: {
@@ -51,6 +60,18 @@
         ];
 
         return img.join('');
+      },
+
+      listeners() {
+        const { load, error, ...listeners } = this.$listeners;
+
+        return listeners;
+      },
+
+      attrs() {
+        const { src, alt, ...attrs } = this.$attrs;
+
+        return attrs;
       }
     },
 
