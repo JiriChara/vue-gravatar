@@ -122,6 +122,32 @@ describe('Gravatar Image Component', () => {
           `//www.gravatar.com/avatar/${hash}?s=80&d=retro&r=pg`
         );
       });
+
+      it('passes protocol w/o colon', () => {
+        const protocol = 'https';
+
+        const anotherGravatar = getViewModel(GravatarImg, {
+          email,
+          protocol
+        });
+
+        expect(anotherGravatar.url).toEqual(
+          `https://www.gravatar.com/avatar/${hash}?s=80&d=retro&r=g`
+        );
+      });
+
+      it('passes protocol w colon', () => {
+        const protocol = 'http:';
+
+        const anotherGravatar = getViewModel(GravatarImg, {
+          email,
+          protocol
+        });
+
+        expect(anotherGravatar.url).toEqual(
+          `http://www.gravatar.com/avatar/${hash}?s=80&d=retro&r=g`
+        );
+      });
     });
   });
 
