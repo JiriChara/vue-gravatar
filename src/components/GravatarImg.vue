@@ -46,13 +46,22 @@
       alt: {
         type: String,
         default: 'Avatar'
+      },
+
+      protocol: {
+        type: String,
+        default: ''
       }
     },
 
     computed: {
       url() {
+        const protocol = this.protocol.slice(-1) === ':'
+          ? this.protocol
+          : `${this.protocol}:`;
+
         const img = [
-          '//www.gravatar.com/avatar/',
+          `${protocol === ':' ? '' : protocol}//www.gravatar.com/avatar/`,
           this.hash || md5(this.email.trim().toLowerCase()),
           `?s=${this.size}`,
           `&d=${this.defaultImg}`,
