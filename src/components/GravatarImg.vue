@@ -56,9 +56,13 @@
 
     computed: {
       url() {
-        const protocol = this.protocol.slice(-1) === ':'
+        var protocol = this.protocol.slice(-1) === ':'
           ? this.protocol
           : `${this.protocol}:`;
+
+        if(protocol !== 'http:' && protocol !== 'https:'){
+          protocol = 'https:'
+        }
 
         const img = [
           `${protocol === ':' ? '' : protocol}//www.gravatar.com/avatar/`,
