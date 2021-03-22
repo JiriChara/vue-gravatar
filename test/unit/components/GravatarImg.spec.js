@@ -42,6 +42,11 @@ describe('Gravatar Image Component', () => {
       expect(GravatarImg.props.alt.type).toBe(String);
       expect(GravatarImg.props.alt.default).toBe('Avatar');
     });
+
+    it('has hostname property', () => {
+      expect(GravatarImg.props.hostname.type).toBe(String);
+      expect(GravatarImg.props.hostname.default).toBe('www.gravatar.com');
+    });
   });
 
   describe('computed', () => {

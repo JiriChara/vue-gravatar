@@ -51,6 +51,11 @@
       protocol: {
         type: String,
         default: ''
+      },
+
+      hostname: {
+        type: String,
+        default: 'www.gravatar.com'
       }
     },
 
@@ -61,7 +66,7 @@
           : `${this.protocol}:`;
 
         const img = [
-          `${protocol === ':' ? '' : protocol}//www.gravatar.com/avatar/`,
+          `${protocol === ':' ? '' : protocol}//${this.hostname}/avatar/`,
           this.hash || md5(this.email.trim().toLowerCase()),
           `?s=${this.size}`,
           `&d=${this.defaultImg}`,
