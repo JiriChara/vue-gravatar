@@ -42,6 +42,8 @@ The following props are available:
 * **default-img** (type: String, default: 'retro') default image type (see. http://en.gravatar.com/site/implement/images/)
 * **rating** (type: String, default: 'g') rating of the image (see. http://en.gravatar.com/site/implement/images/)
 * **alt** (type: String, default: 'Avatar') The alternative text of the image
+* **protocol** (type: String, default: '') The protocol to use (use 'https' in electron apps)
+* **hostname** (type: String, default: 'www.gravatar.com') Alternative hostname for gravatar images
 
 #### Example
 
